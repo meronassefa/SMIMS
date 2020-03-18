@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="js/bootstrap.js">
-    <link rel="stylesheet" type="text/css" href="/style.css">
-</head>
+{{>Employee/header}}
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
 
@@ -18,26 +10,25 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/tenant">Registration </a>
+                        <a class="nav-link" href="tenant_registration.html">Registration </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/record_contract">Contract</a>
+                        <a class="nav-link" href="record_contract.html">Contract</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/record_payment">Payment </a>
+                        <a class="nav-link" href="record_payment.html">Payment </a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Room </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/record_expense">Expenses</a>
+                        <a class="nav-link" href="record_expense.html">Expenses</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Inbox </a>
@@ -57,61 +48,33 @@
         </div>
 
     </nav>
-    <div class="container">
-        {{{body}}}
 
 
-        {{!-- <div class="container">
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <h1 class="text-center">Tenant Registratioin</h1>
+    <header>
+        <div class="container">
+            <div class="banner-text">
+                <div class="text-area">
+                    <span>S</span>
+                    <span>M</span>
+                    <span>I</span>
+                    <span>M</span>
+                    <span>S</span>&nbsp;
 
-                    <form class="form-inline">
-                        <form class="needs-validation" novalidate>
-                            <label class="lable col-md-3 control-lable">Full Name </label>
-                            <div class="col-md-9">
-                                <input id="full" type="text" class="form-control" name="name" placeholder="name">
-                            </div>
-                            <label class="lable col-md-3 control-lable">Company name </label>
-                            <div class="col-md-9">
-                                <input type="text" class="form-control" name="name" placeholder="Company name">
-                            </div>
-                            <label class="lable col-md-3 control-lable">Phone number </label>
-                            <div class="col-md-9">
-                                <input type="number" class="form-control" name="Phone number"
-                                    placeholder="phone number">
-                            </div>
 
-                            <label class="lable col-md-3 control-lable">Tin number</label>
-                            <div class="col-md-9">
-                                <input type="number" class="form-control" name="Tin number" placeholder="Tin number">
-                            </div>
-                            <label class="lable col-md-3 control-lable">Address</label>
-                            <div class="col-md-9">
-                                <input type="number" class="form-control" name="Address" placeholder="Address">
-                            </div>
-                            <label class="lable col-md-3 control-lable">User Name</label>
-                            <div class="col-md-9">
-                                <input type="text" class="form-control" name="User Name" placeholder="name">
-                            </div>
-
-                            <label class="lable col-md-3 control-lable">Password</label>
-                            <div class="col-md-9">
-                                <input type="Password" class="form-control" name="Password" placeholder="Password">
-                            </div>
-                            <a href="test.html">
-                                <div class="btn btn-info">Submit</div>
-                            </a>
-                        </form>
-                    </form>
                 </div>
-                <div class="col-md-3"></div>
+
+                <p>Wellcome To Shoping Mall Information Managment System </p>
+
+                <p class="banner-btn">
+
+                    <a href="#" class="active">Add Information</a>
+                    <a href="#">Report</a>
+                </p>
+
             </div>
-        </div> --}}
 
-    </div>
-
+        </div>
+    </header>
 
 </body>
 
