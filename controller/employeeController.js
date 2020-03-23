@@ -1,16 +1,18 @@
-const tenants = require('../models/tenants');
+const tenants = require('../models/tenantsRegistration');
 
 
 module.exports = {
+
     index: (req, res) => {
-        res.render('admin/index')
+        res.render('employee/index')
     },
     getTenants: (req, res) => {
 
         tenants.findAll()
             .then(tenants => {
+
                 console.log(tenants)
-                res.render('tenants', {
+                res.render('main', {
                     tenants
                 })
 
@@ -20,37 +22,40 @@ module.exports = {
 
 
     },
-    postTenants: (req, res) => {
-        const data = {
-            fullName: 'samrawit',
-            companyName: 'samri ',
-            phoneNo: '0922787213',
-            tinNo: '0000456998',
-            address: 'yeka subcity wereka 13',
-            userName: 'samri',
-            password: '123'
-        }
-        let {
-            fullName,
-            companyName,
-            phoneNo,
-            tinNo,
-            address,
-            userName,
-            password
-        } = data;
-        tenants.create({
-                fullName,
-                companyName,
-                phoneNo,
-                tinNo,
-                address,
-                userName,
-                password
-            })
-            .then(tenants => res.redirect('/employee'))
-            .catch(err => console.log(err))
-    }
+    // postTenants: (req, res) => {
+    //     const data = {
+    //         fullName: 'samrawit',
+    //         companyName: 'samri ',
+    //         phoneNo: '0922787213',
+    //         tinNo: '0000456998',
+    //         address: 'yeka subcity wereka 13',
+    //         userName: 'samri',
+    //         password: '123'
+    //     }
+    //     let {
+    //         fullName,
+    //         companyName,
+    //         phoneNo,
+    //         tinNo,
+    //         address,
+    //         userName,
+    //         password
+    //     } = data;
+    //     tenants.create({
+    //             fullName,
+    //             companyName,
+    //             phoneNo,
+    //             tinNo,
+    //             address,
+    //             userName,
+    //             password
+    //         })
+    //         .then(tenants => res.redirect('/employee'))
+    //         .catch(err => console.log(err))
+    // },
+    submitPosts: (req, res) => {
+        res.send("successfully Registered");
+    },
     // submitPosts: (req, res) => {
     //     // res.send("post submited")
 
@@ -83,4 +88,12 @@ module.exports = {
 
     // }
 
+    registerPage: (req, res) => {
+        res.render("employee/tenantRegistration")
+        // res.render('employee/tenantRegistration')
+
+    },
+    registerPost: (req, res) => {
+        res.send("Successfully Registered")
+    }
 }
