@@ -3,9 +3,19 @@ const hbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const path = require('path');
 const Sequelize = require('sequelize');
+const flash = require('connect-flash');
+const session = require('express-session');
 
-const db = require('./config/database')
 
+const db = require('./config/database');
+
+const {
+    golobalVariables
+} = require('./config/configuration');
+
+const {
+    PORT
+} = require('./config/configuration');
 
 // Test Db
 db.authenticate()
@@ -16,6 +26,18 @@ db.authenticate()
 
 const app = express();
 
+/** flash and session */
+app.use(session({
+    secret: 'anysecret',
+    saveUninitialized: true,
+    resave: true
+
+}));
+app.use(flash());
+
+/**globaleVariables */
+app.use(golobalVariables)
+
 //Handlebars
 
 app.engine('handlebars', hbs({
@@ -24,7 +46,9 @@ app.engine('handlebars', hbs({
 app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
 const defaultRoute = require('./routes/defaultRoute');
 app.use('/', defaultRoute);
@@ -43,6 +67,6 @@ app.use('/employee', employeeRoutes);
 
 
 
-const PORT = process.env.PORT || 5000;
+
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));

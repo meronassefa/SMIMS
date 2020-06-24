@@ -20,8 +20,9 @@ router.route('/')
 router.route('/tenantRegistration')
     .get(employeeController.registerPage)
     .post(employeeController.registerPost)
-router.route('/tenant')
-    .get(employeeController.getTenants)
+
+// router.route('/tenant')
+//     .get(employeeController.getTenants)
 
 
 
