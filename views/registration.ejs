@@ -1,0 +1,59 @@
+<%- include('includes/employee/header') %>
+
+<%- include('includes/employee/sidebar.ejs')  %>
+    
+<div class="main-container">
+        
+            
+                <h1 class="text-center">Tenant Registratioin</h1>
+
+                <form action="/register" method="POST" class="form-inline">
+                    
+                    <% regErrors.forEach(function(message){%>
+                        <div class="alert alert-danger small"><%= message%></div>
+                    <%}) %>
+
+                    <form class="needs-validation" novalidate>
+                        <label class="lable col-md-3 control-lable">Full Name </label>
+                        <div class="col-md-9">
+                            <input id="full" type="text" class="form-control" name="fullname" placeholder="Full Name">
+                        </div>
+
+                        <label class="lable col-md-3 control-lable">Phone number </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="phonenumber" placeholder="phone number">
+                        </div>
+
+                        <label class="lable col-md-3 control-lable">Address</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="address" placeholder="Address">
+                        </div>
+                        <label class="lable col-md-3 control-lable">User Name</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="username" placeholder="User Name">
+                        </div>
+
+                        <label class="lable col-md-3 control-lable">Password</label>
+                        <div class="col-md-9">
+                            <input type="Password" class="form-control" name="password" placeholder="Password">
+                        </div>
+                        <label class="lable col-md-3 control-label">Role</label>
+                        <div class="col-md-9">
+                            <select class=" form-control" name="role">
+                                <option value="admin">Admin</option>
+                                <option value="employee">Employee</option>
+                                <option value="manager">Manager</option>
+                                <option value="tenant">Tenant</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-auto">
+                            <button class="btn btn-primary btn-sm">Save</button>
+                        </div>
+                    </form>
+                </form>
+          
+    </div>
+
+
+</body>
