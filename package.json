@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "shoppingMall",
   "version": "1.0.0",
   "description": "",
@@ -21,24 +20,5 @@
     "express-session": "^1.17.1",
     "mongodb": "^3.6.2",
     "validator": "^13.1.17"
-=======
-  "name": "smims",
-  "version": "1.0.0",
-  "description": "Shopping Mall Information Management System",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Samrawit Ayalew",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "connect-flash": "^0.1.1",
-    "express": "^4.17.1",
-    "express-flash": "0.0.2",
-    "express-session": "^1.17.0",
-    "handlebars": "^4.7.6",
-    "mysql": "^2.18.1"
->>>>>>> f3043b18b06f38bbaaddb2b12ede1bfde3ffd06f
   }
 }
